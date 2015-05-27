@@ -8,4 +8,4 @@ COPY . /usr/src/rump-nginx-lua-test
 
 WORKDIR /usr/src/rump-nginx-lua-test
 
-RUN ./build.sh
+RUN strace -f ./build.sh
