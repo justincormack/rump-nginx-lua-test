@@ -1,6 +1,7 @@
 #!/bin/sh
 
 set -e
+set -x
 
 tar cf root.tar etc data
 rump.tar c -f - /dev > dev.tar
