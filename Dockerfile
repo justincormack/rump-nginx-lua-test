@@ -12,4 +12,4 @@ RUN ./build.sh
 
 ENV RUMP_VERBOSE=1
 
-CMD ["rexec", "nginx", "fs.img", "/dev/tap", "--", "-c", "/data/conf/nginx.conf"]
+CMD ["./nginx.sh"]
