@@ -1,6 +1,6 @@
 # Simple example with rump-nginx-lua
 
-FROM justincormack/rump-nginx-lua2
+FROM justincormack/rump-nginx-lua
 
 MAINTAINER Justin Cormack
 
@@ -10,4 +10,6 @@ WORKDIR /usr/src/rump-nginx-lua-test
 
 RUN ./build.sh
 
-CMD ["./run.sh"]
+ENV RUMP_VERBOSE=1
+
+CMD ["rexec", "nginx", "fs.img", "/dev/tap", "--", "-c", "/data/conf/nginx.conf"]
