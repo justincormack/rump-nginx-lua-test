@@ -13,4 +13,3 @@ cat root.tar | rexec rump.dd fs.img -- of=root.tar
 rexec rump.tar fs.img -- xf dev.tar
 rexec rump.tar fs.img -- xf root.tar
 rexec rump.rm fs.img -- dev.tar root.tar
-rexec rump.mkdir fs.img -- /tmp
