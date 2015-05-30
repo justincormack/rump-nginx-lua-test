@@ -1,3 +1,3 @@
 #!/bin/sh
 
-rexec nginx fs.img ${INTERFACE} -- -c /data/conf/nginx.conf
+rexec nginx -ro fs.img -rw ${INTERFACE} -- -c /data/conf/nginx.conf
