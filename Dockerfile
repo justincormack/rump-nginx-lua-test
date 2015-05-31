@@ -12,4 +12,4 @@ RUN ./build.sh
 
 ENV RUMP_VERBOSE=1
 
-CMD ["./nginx.sh"]
+CMD rexec nginx -nx -ro fs.img -rw ${INTERFACE} -- -c /data/conf/nginx.conf
