@@ -14,4 +14,6 @@ RUN ./build.sh
 
 ENV RUMP_VERBOSE=1
 
-CMD rexec nginx -nx -ro fs.img -rw ${INTERFACE} -- -c /data/conf/nginx.conf
+EXPOSE 80
+
+CMD ["/usr/src/rump-nginx-lua-test/nginx.sh"]

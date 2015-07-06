@@ -1,8 +1,6 @@
 #!/bin/sh
 
-for i in `seq 5 99`
+for i in `seq 1 10`
 do
-  dev="/dev/tap$i"
-  docker run -d --net=host --device=${dev}:/dev/tap justincormack/rump-nginx-lua-test
-  sleep 2
+  docker run -d --cap-add NET_ADMIN -P justincormack/rump-nginx-lua-test
 done
