@@ -10,4 +10,6 @@ ip addr del $FIXED_ADDRESS/$FIXED_MASK dev $IFACE
 echo $FIXED_ADDRESS/$FIXED_MASK $FIXED_GATEWAY
 INTERFACE="packet:$IFACE"
 
+ethtool -K eth0 tso off
+
 rexec nginx -nx -ro fs.img -rw ${INTERFACE} -- -c /data/conf/nginx.conf
