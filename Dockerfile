@@ -10,6 +10,8 @@ WORKDIR /usr/src/rump-nginx-lua-test
 
 ENV SUDO_UID=1000
 
+ENV RUMP_VERBOSE=0
+
 RUN \
   tar cf root.tar etc data && \
   rump.tar c -f - /dev > dev.tar && \
